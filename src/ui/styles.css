@@ -1,0 +1,9 @@
+:root { color-scheme: light dark; --gap: 0.75rem; }
+html, body { height: 100%; margin: 0; font-family: system-ui, ui-sans-serif; }
+body { max-width: 720px; margin: 0 auto; padding: var(--gap); }
+header { display: grid; gap: var(--gap); align-items: center; }
+form { display: grid; grid-template-columns: 1fr auto auto; gap: var(--gap); }
+#habit-list { list-style: none; padding: 0; margin: 1rem 0; display: grid; gap: var(--gap); }
+.card { display:flex; justify-content:space-between; align-items:center; padding: .75rem 1rem; border:1px solid color-mix(in oklab, CanvasText 25%, Canvas); border-radius: .75rem; }
+.card button { margin-left: .5rem; }
+button[aria-pressed="true"] { outline: 2px solid Highlight; }

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#0ea5e9" />
+    <title>Offline Habit Tracker</title>
+  </head>
+  <body>
+    <header>
+      <a href="https://ramosmarco95.github.io/javascript-projects/">Home</a>
+      <h1>Offline Habit Tracker</h1>
+      <form id="add-form" aria-label="Add habit">
+        <input id="habit-name" name="name" placeholder="New habit…" aria-label="Habit name" required />
+        <select id="habit-freq" name="freq" aria-label="Frequency">
+        <option value="daily">Daily</option>
+        <option value="weekly">Weekly</option>
+        </select>
+        <button type="submit">Add</button>
+      </form>
+    </header>
+
+
+    <main>
+      <ul id="habit-list" tabindex="0" aria-live="polite"></ul>
+    </main>
+
+
+  <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
