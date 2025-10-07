@@ -133,10 +133,7 @@
 <a name='L68'></a><a href='#L68'>68</a>
 <a name='L69'></a><a href='#L69'>69</a>
 <a name='L70'></a><a href='#L70'>70</a>
-<a name='L71'></a><a href='#L71'>71</a>
-<a name='L72'></a><a href='#L72'>72</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L71'></a><a href='#L71'>71</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -205,85 +202,85 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { openDB } from 'idb';
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { openDB } from 'idb';
 import type { DBSchema, IDBPDatabase } from 'idb';
 import type { Habit, Entry } from '../types';
 &nbsp;
-&nbsp;
 interface HabitDB extends DBSchema {
-habits: {
-value: Habit;
-key: string;
-indexes: { 'by-name': string };
-};
-entries: {
-value: Entry;
-key: string;
-indexes: { 'by-habit': string; 'by-date': string };
-};
+  habits: {
+    value: Habit;
+    key: string;
+    indexes: { 'by-name': string };
+  };
+  entries: {
+    value: Entry;
+    key: string;
+    indexes: { 'by-habit': string; 'by-date': string };
+  };
 }
-&nbsp;
 &nbsp;
 let dbPromise: Promise&lt;IDBPDatabase&lt;HabitDB&gt;&gt; | null = null;
 &nbsp;
 /* Initialize and get the IndexedDB database */
 function getDB() {
-if (!dbPromise) {
-dbPromise = openDB&lt;HabitDB&gt;('habit-tracker', 1, {
-upgrade(db) {
-const habits = db.createObjectStore('habits', { keyPath: 'id' });
-habits.createIndex('by-name', 'name', { unique: false });
-const entries = db.createObjectStore('entries', { keyPath: 'id' });
-entries.createIndex('by-habit', 'habitId', { unique: false });
-entries.createIndex('by-date', 'date', { unique: false });
-}
-});
-}
-return dbPromise;
+  if (!dbPromise) {
+    dbPromise = openDB&lt;HabitDB&gt;('habit-tracker', 1, {
+      upgrade(db) {
+        const habits = db.createObjectStore('habits', { keyPath: 'id' });
+        habits.createIndex('by-name', 'name', { unique: false });
+        const entries = db.createObjectStore('entries', { keyPath: 'id' });
+        entries.createIndex('by-habit', 'habitId', { unique: false });
+        entries.createIndex('by-date', 'date', { unique: false });
+      },
+    });
+  }
+  return dbPromise;
 }
 &nbsp;
 /*  CRUD operations for Habits and Entries */
 export async function getHabits(): Promise&lt;Habit[]&gt; {
-const db = await getDB();
-return db.getAll('habits');
+  const db = await getDB();
+  return db.getAll('habits');
 }
 &nbsp;
 export async function putHabit(habit: Habit) {
-const db = await getDB();
-await db.put('habits', habit);
+  const db = await getDB();
+  await db.put('habits', habit);
 }
 &nbsp;
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >export async function deleteHabit(id: string) {</span></span>
-<span class="cstat-no" title="statement not covered" >const db = await getDB();</span>
-<span class="cstat-no" title="statement not covered" >await db.delete('habits', id);</span>
+<span class="cstat-no" title="statement not covered" >  const db = await getDB();</span>
+<span class="cstat-no" title="statement not covered" >  await db.delete('habits', id);</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >export async function getEntriesByHabit(habitId: string): Promise&lt;Entry[]&gt; {</span></span>
-<span class="cstat-no" title="statement not covered" >const db = await getDB();</span>
-<span class="cstat-no" title="statement not covered" >return db.getAllFromIndex('entries', 'by-habit', habitId);</span>
+<span class="cstat-no" title="statement not covered" >  const db = await getDB();</span>
+<span class="cstat-no" title="statement not covered" >  return db.getAllFromIndex('entries', 'by-habit', habitId);</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >export async function putEntry(entry: Entry) {</span></span>
-<span class="cstat-no" title="statement not covered" >const db = await getDB();</span>
-<span class="cstat-no" title="statement not covered" >await db.put('entries', entry);</span>
+<span class="cstat-no" title="statement not covered" >  const db = await getDB();</span>
+<span class="cstat-no" title="statement not covered" >  await db.put('entries', entry);</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >export async function deleteEntriesForHabit(habitId: string) {</span></span>
-<span class="cstat-no" title="statement not covered" >const db = await getDB();</span>
-<span class="cstat-no" title="statement not covered" >const tx = db.transaction('entries', 'readwrite');</span>
-<span class="cstat-no" title="statement not covered" >const idx = tx.store.index('by-habit');</span>
-<span class="cstat-no" title="statement not covered" >for await (const cursor of idx.iterate(habitId)) {</span>
-<span class="cstat-no" title="statement not covered" >await cursor.delete();</span>
+<span class="cstat-no" title="statement not covered" >  const db = await getDB();</span>
+<span class="cstat-no" title="statement not covered" >  const tx = db.transaction('entries', 'readwrite');</span>
+<span class="cstat-no" title="statement not covered" >  const idx = tx.store.index('by-habit');</span>
+<span class="cstat-no" title="statement not covered" >  for await (const cursor of idx.iterate(habitId)) {</span>
+<span class="cstat-no" title="statement not covered" >    await cursor.delete();</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  await tx.done;</span>
 <span class="cstat-no" title="statement not covered" >}</span>
-<span class="cstat-no" title="statement not covered" >await tx.done;</span>
-<span class="cstat-no" title="statement not covered" >}</span></pre></td></tr></table></pre>
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-10-01T13:35:14.427Z
+                at 2025-10-06T02:16:22.457Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

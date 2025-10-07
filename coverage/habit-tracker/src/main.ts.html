@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/39</span>
+                <span class='fraction'>0/41</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/39</span>
+                <span class='fraction'>0/41</span>
             </div>
         
             
@@ -115,29 +115,18 @@
 <a name='L50'></a><a href='#L50'>50</a>
 <a name='L51'></a><a href='#L51'>51</a>
 <a name='L52'></a><a href='#L52'>52</a>
-<a name='L53'></a><a href='#L53'>53</a>
-<a name='L54'></a><a href='#L54'>54</a>
-<a name='L55'></a><a href='#L55'>55</a>
-<a name='L56'></a><a href='#L56'>56</a>
-<a name='L57'></a><a href='#L57'>57</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L53'></a><a href='#L53'>53</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -148,13 +137,16 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -170,75 +162,71 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import './ui/styles.css';</span></span></span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import './ui/styles.css';</span></span></span>
 <span class="cstat-no" title="statement not covered" >import { createStore } from './state/createStore';</span>
 <span class="cstat-no" title="statement not covered" >import { render } from './ui/render';</span>
 <span class="cstat-no" title="statement not covered" >import { throttle } from './utils/throttle';</span>
 <span class="cstat-no" title="statement not covered" >import { onIdle } from './utils/idle';</span>
 <span class="cstat-no" title="statement not covered" >import { Workbox } from 'workbox-window';</span>
 &nbsp;
-&nbsp;
 <span class="cstat-no" title="statement not covered" >const store = createStore();</span>
-&nbsp;
 &nbsp;
 // Render on state changes (throttled)
 <span class="cstat-no" title="statement not covered" >const throttledRender = throttle(render, 50);</span>
 <span class="cstat-no" title="statement not covered" >store.subscribe(throttledRender);</span>
 &nbsp;
-&nbsp;
 // Hydrate when idle
-<span class="cstat-no" title="statement not covered" >onIdle(() =&gt; { store.init(); });</span>
-&nbsp;
+<span class="cstat-no" title="statement not covered" >onIdle(() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >  store.init();</span>
+<span class="cstat-no" title="statement not covered" >});</span>
 &nbsp;
 // UI wiring
 <span class="cstat-no" title="statement not covered" >const form = document.getElementById('add-form') as HTMLFormElement;</span>
 <span class="cstat-no" title="statement not covered" >const nameInput = document.getElementById('habit-name') as HTMLInputElement;</span>
 <span class="cstat-no" title="statement not covered" >const freqSelect = document.getElementById('habit-freq') as HTMLSelectElement;</span>
 &nbsp;
-&nbsp;
 <span class="cstat-no" title="statement not covered" >form.addEventListener('submit', async (e) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >e.preventDefault();</span>
-<span class="cstat-no" title="statement not covered" >const name = nameInput.value.trim();</span>
-<span class="cstat-no" title="statement not covered" >if (!name) return;</span>
-<span class="cstat-no" title="statement not covered" >const freq = (freqSelect.value as 'daily' | 'weekly') || 'daily';</span>
-<span class="cstat-no" title="statement not covered" >await store.addHabit(name, freq);</span>
-<span class="cstat-no" title="statement not covered" >form.reset();</span>
-<span class="cstat-no" title="statement not covered" >nameInput.focus();</span>
+<span class="cstat-no" title="statement not covered" >  e.preventDefault();</span>
+<span class="cstat-no" title="statement not covered" >  const name = nameInput.value.trim();</span>
+<span class="cstat-no" title="statement not covered" >  if (!name) return;</span>
+<span class="cstat-no" title="statement not covered" >  const freq = (freqSelect.value as 'daily' | 'weekly') || 'daily';</span>
+<span class="cstat-no" title="statement not covered" >  await store.addHabit(name, freq);</span>
+<span class="cstat-no" title="statement not covered" >  form.reset();</span>
+<span class="cstat-no" title="statement not covered" >  nameInput.focus();</span>
 <span class="cstat-no" title="statement not covered" >});</span>
 &nbsp;
-&nbsp;
-<span class="cstat-no" title="statement not covered" >(document.getElementById('habit-list')!).addEventListener('click', async (e) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >const target = e.target as HTMLElement;</span>
-<span class="cstat-no" title="statement not covered" >const action = target.dataset.action;</span>
-<span class="cstat-no" title="statement not covered" >const id = target.dataset.id;</span>
-<span class="cstat-no" title="statement not covered" >if (!action || !id) return;</span>
-<span class="cstat-no" title="statement not covered" >if (action === 'remove') {</span>
-<span class="cstat-no" title="statement not covered" >await store.removeHabit(id);</span>
-<span class="cstat-no" title="statement not covered" >} else if (action === 'complete') {</span>
-<span class="cstat-no" title="statement not covered" >target.setAttribute('aria-pressed', 'true');</span>
-<span class="cstat-no" title="statement not covered" >await store.markComplete(id, new Date().toISOString());</span>
-<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >document.getElementById('habit-list')!.addEventListener('click', async (e) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >  const target = e.target as HTMLElement;</span>
+<span class="cstat-no" title="statement not covered" >  const action = target.dataset.action;</span>
+<span class="cstat-no" title="statement not covered" >  const id = target.dataset.id;</span>
+<span class="cstat-no" title="statement not covered" >  if (!action || !id) return;</span>
+<span class="cstat-no" title="statement not covered" >  if (action === 'remove') {</span>
+<span class="cstat-no" title="statement not covered" >    await store.removeHabit(id);</span>
+<span class="cstat-no" title="statement not covered" >  } else if (action === 'complete') {</span>
+<span class="cstat-no" title="statement not covered" >    target.setAttribute('aria-pressed', 'true');</span>
+<span class="cstat-no" title="statement not covered" >    await store.markComplete(id, new Date().toISOString());</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" >});</span>
-&nbsp;
 &nbsp;
 // SW registration (progressive)
 <span class="cstat-no" title="statement not covered" >if ('serviceWorker' in navigator) {</span>
-<span class="cstat-no" title="statement not covered" >const wb = new Workbox('/sw.js');</span>
-<span class="cstat-no" title="statement not covered" >wb.addEventListener('activated', () =&gt; console.log('SW activated'));</span>
-<span class="cstat-no" title="statement not covered" >wb.register();</span>
-<span class="cstat-no" title="statement not covered" >}</span></pre></td></tr></table></pre>
+<span class="cstat-no" title="statement not covered" >  const wb = new Workbox('/sw.js');</span>
+<span class="cstat-no" title="statement not covered" >  wb.addEventListener('activated', () =&gt; console.log('SW activated'));</span>
+<span class="cstat-no" title="statement not covered" >  wb.register();</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-10-01T13:35:14.427Z
+                at 2025-10-06T02:16:22.457Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

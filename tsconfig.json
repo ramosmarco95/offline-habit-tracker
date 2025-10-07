@@ -25,5 +25,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src", "__tests__", "tests-e2e", "workbox.build.mjs"]
+  "include": ["src", "__tests__", "tests-e2e", "workbox.build.mjs", "src/sw/sw.ts"]
 }

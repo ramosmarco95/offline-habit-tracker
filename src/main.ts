@@ -45,8 +45,19 @@ document.getElementById('habit-list')!.addEventListener('click', async (e) => {
 });
 
 // SW registration (progressive)
-if ('serviceWorker' in navigator) {
+// SW registration (progressive) - only register in production builds.
+// In Vite dev server /sw.js doesn't exist and the dev server will return
+// the app HTML (text/html), which causes the browser SecurityError when
+// trying to register the worker. Guarding by import.meta.env.PROD prevents
+// that fetch during development.
+if ('serviceWorker' in navigator && import.meta.env.PROD) {
   const wb = new Workbox('/sw.js');
   wb.addEventListener('activated', () => console.log('SW activated'));
   wb.register();
+} else {
+  // In dev mode we skip SW registration to avoid the unsupported MIME type error
+  // from the dev server returning index.html for unknown routes like /sw.js.
+  // If you want to test the service worker locally, build the app and serve
+  // the `dist` folder (or place a sw.js in `public/`).
+  // console.debug('Service worker registration skipped (dev)');
 }

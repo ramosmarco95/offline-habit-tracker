@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/32</span>
+                <span class='fraction'>0/34</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/32</span>
+                <span class='fraction'>0/34</span>
             </div>
         
             
@@ -109,9 +109,7 @@
 <a name='L44'></a><a href='#L44'>44</a>
 <a name='L45'></a><a href='#L45'>45</a>
 <a name='L46'></a><a href='#L46'>46</a>
-<a name='L47'></a><a href='#L47'>47</a>
-<a name='L48'></a><a href='#L48'>48</a>
-<a name='L49'></a><a href='#L49'>49</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L47'></a><a href='#L47'>47</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -120,13 +118,10 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -135,12 +130,10 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -159,7 +152,10 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/// &lt;reference lib="webworker" /&gt;
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/// &lt;reference lib="webworker" /&gt;
 /* eslint-disable no-restricted-globals */
 <span class="cstat-no" title="statement not covered" >import { clientsClaim } from 'workbox-core';</span>
 <span class="cstat-no" title="statement not covered" >import { precacheAndRoute, createHandlerBoundToURL } from 'workbox-precaching';</span>
@@ -167,54 +163,52 @@
 <span class="cstat-no" title="statement not covered" >import { StaleWhileRevalidate, CacheFirst } from 'workbox-strategies';</span>
 <span class="cstat-no" title="statement not covered" >import { Queue } from 'workbox-background-sync';</span>
 &nbsp;
-&nbsp;
 declare const self: ServiceWorkerGlobalScope;
 <span class="cstat-no" title="statement not covered" >clientsClaim();</span>
-&nbsp;
 &nbsp;
 // self.__WB_MANIFEST is replaced at build time
 <span class="cstat-no" title="statement not covered" >precacheAndRoute(self.__WB_MANIFEST);</span>
 &nbsp;
-&nbsp;
 // App shell navigation fallback
 <span class="cstat-no" title="statement not covered" >registerRoute(</span>
-<span class="cstat-no" title="statement not covered" >({ request }) =&gt; request.mode === 'navigate',</span>
-<span class="cstat-no" title="statement not covered" >createHandlerBoundToURL('/index.html')</span>
+<span class="cstat-no" title="statement not covered" >  ({ request }) =&gt; request.mode === 'navigate',</span>
+<span class="cstat-no" title="statement not covered" >  createHandlerBoundToURL('/index.html'),</span>
 <span class="cstat-no" title="statement not covered" >);</span>
-&nbsp;
 &nbsp;
 // Static assets (cache-first)
 <span class="cstat-no" title="statement not covered" >registerRoute(</span>
-<span class="cstat-no" title="statement not covered" >({ request }) =&gt; ['style', 'script', 'worker'].includes(request.destination),</span>
-<span class="cstat-no" title="statement not covered" >new CacheFirst({ cacheName: 'assets-v1' })</span>
+<span class="cstat-no" title="statement not covered" >  ({ request }) =&gt; ['style', 'script', 'worker'].includes(request.destination),</span>
+<span class="cstat-no" title="statement not covered" >  new CacheFirst({ cacheName: 'assets-v1' }),</span>
 <span class="cstat-no" title="statement not covered" >);</span>
-&nbsp;
 &nbsp;
 // API sync queue (optional)
 <span class="cstat-no" title="statement not covered" >const syncQueue = new Queue('offline-mutations');</span>
 <span class="cstat-no" title="statement not covered" >self.addEventListener('fetch', (event) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >const req = event.request;</span>
-<span class="cstat-no" title="statement not covered" >if (req.method === 'POST' &amp;&amp; new URL(req.url).pathname.startsWith('/sync')) {</span>
-<span class="cstat-no" title="statement not covered" >event.respondWith(</span>
-<span class="cstat-no" title="statement not covered" >(async () =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >try {</span>
-<span class="cstat-no" title="statement not covered" >const res = await fetch(req.clone());</span>
-<span class="cstat-no" title="statement not covered" >return res;</span>
-<span class="cstat-no" title="statement not covered" >} catch (err) {</span>
-<span class="cstat-no" title="statement not covered" >await syncQueue.pushRequest({ request: req });</span>
-<span class="cstat-no" title="statement not covered" >return new Response(JSON.stringify({ queued: true }), { status: 202 });</span>
-<span class="cstat-no" title="statement not covered" >}</span>
-<span class="cstat-no" title="statement not covered" >})()</span>
-<span class="cstat-no" title="statement not covered" >);</span>
-<span class="cstat-no" title="statement not covered" >}</span>
-<span class="cstat-no" title="statement not covered" >});</span></pre></td></tr></table></pre>
+<span class="cstat-no" title="statement not covered" >  const req = event.request;</span>
+<span class="cstat-no" title="statement not covered" >  if (req.method === 'POST' &amp;&amp; new URL(req.url).pathname.startsWith('/sync')) {</span>
+<span class="cstat-no" title="statement not covered" >    event.respondWith(</span>
+<span class="cstat-no" title="statement not covered" >      (async () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        try {</span>
+<span class="cstat-no" title="statement not covered" >          const res = await fetch(req.clone());</span>
+<span class="cstat-no" title="statement not covered" >          return res;</span>
+<span class="cstat-no" title="statement not covered" >        } catch (err) {</span>
+<span class="cstat-no" title="statement not covered" >          await syncQueue.pushRequest({ request: req });</span>
+<span class="cstat-no" title="statement not covered" >          return new Response(JSON.stringify({ queued: true }), {</span>
+<span class="cstat-no" title="statement not covered" >            status: 202,</span>
+<span class="cstat-no" title="statement not covered" >          });</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >      })(),</span>
+<span class="cstat-no" title="statement not covered" >    );</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >});</span>
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-10-01T13:35:14.427Z
+                at 2025-10-06T02:16:22.457Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
