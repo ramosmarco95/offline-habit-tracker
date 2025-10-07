@@ -1,4 +1,4 @@
-import type { State } from '../state/createStore';
+import type { State } from '../store/createStore';
 import { habitItem } from './components';
 
 
