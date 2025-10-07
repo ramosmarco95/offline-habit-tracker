@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/41</span>
+                <span class='fraction'>0/42</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/41</span>
+                <span class='fraction'>0/42</span>
             </div>
         
             
@@ -115,7 +115,18 @@
 <a name='L50'></a><a href='#L50'>50</a>
 <a name='L51'></a><a href='#L51'>51</a>
 <a name='L52'></a><a href='#L52'>52</a>
-<a name='L53'></a><a href='#L53'>53</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -162,13 +173,24 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import './ui/styles.css';</span></span></span>
-<span class="cstat-no" title="statement not covered" >import { createStore } from './state/createStore';</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import './ui/styles.css';<span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span>
+<span class="cstat-no" title="statement not covered" >import { createStore } from './store/createStore';</span>
 <span class="cstat-no" title="statement not covered" >import { render } from './ui/render';</span>
 <span class="cstat-no" title="statement not covered" >import { throttle } from './utils/throttle';</span>
 <span class="cstat-no" title="statement not covered" >import { onIdle } from './utils/idle';</span>
@@ -214,10 +236,21 @@
 <span class="cstat-no" title="statement not covered" >});</span>
 &nbsp;
 // SW registration (progressive)
-<span class="cstat-no" title="statement not covered" >if ('serviceWorker' in navigator) {</span>
+// SW registration (progressive) - only register in production builds.
+// In Vite dev server /sw.js doesn't exist and the dev server will return
+// the app HTML (text/html), which causes the browser SecurityError when
+// trying to register the worker. Guarding by import.meta.env.PROD prevents
+// that fetch during development.
+<span class="cstat-no" title="statement not covered" >if ('serviceWorker' in navigator &amp;&amp; import.meta.env.PROD) {</span>
 <span class="cstat-no" title="statement not covered" >  const wb = new Workbox('/sw.js');</span>
 <span class="cstat-no" title="statement not covered" >  wb.addEventListener('activated', () =&gt; console.log('SW activated'));</span>
 <span class="cstat-no" title="statement not covered" >  wb.register();</span>
+<span class="cstat-no" title="statement not covered" >} else {</span>
+  // In dev mode we skip SW registration to avoid the unsupported MIME type error
+  // from the dev server returning index.html for unknown routes like /sw.js.
+  // If you want to test the service worker locally, build the app and serve
+  // the `dist` folder (or place a sw.js in `public/`).
+  // console.debug('Service worker registration skipped (dev)');
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
 
@@ -226,7 +259,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-10-06T02:16:22.457Z
+                at 2025-10-07T16:53:06.629Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

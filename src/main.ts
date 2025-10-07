@@ -1,5 +1,5 @@
 import './ui/styles.css';
-import { createStore } from './state/createStore';
+import { createStore } from './store/createStore';
 import { render } from './ui/render';
 import { throttle } from './utils/throttle';
 import { onIdle } from './utils/idle';
@@ -59,5 +59,5 @@ if ('serviceWorker' in navigator && import.meta.env.PROD) {
   // from the dev server returning index.html for unknown routes like /sw.js.
   // If you want to test the service worker locally, build the app and serve
   // the `dist` folder (or place a sw.js in `public/`).
-  // console.debug('Service worker registration skipped (dev)');
+  console.debug('Service worker registration skipped (dev)');
 }

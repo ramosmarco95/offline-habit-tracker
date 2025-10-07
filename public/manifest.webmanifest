@@ -6,7 +6,7 @@
 "background_color": "#111",
 "theme_color": "#0ea5e9",
 "icons": [
-{ "src": "/icons/check-mark.png", "type": "image/png", "sizes": "192x192" },
+{ "src": "/icons/offline-habit-tracker.png", "type": "image/png", "sizes": "192x192" },
 { "src": "/icons/speaker.png", "type": "image/png", "sizes": "512x512" }
 ]
 }
