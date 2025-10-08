@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# If you have a staging site, disallow crawling there
+# Disallow: /staging/
+
+Sitemap: https://ramosmarco95.github.io/javascript-projects/offline-habit-tracker/sitemap.xml

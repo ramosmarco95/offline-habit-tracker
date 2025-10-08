@@ -3,9 +3,58 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Offline Habit Tracker — a lightweight Progressive Web App to create, track and maintain daily or weekly habits with offline support and persistent storage." />
+    <meta name="keywords" content="habit tracker, PWA, offline, IndexedDB, habits, productivity, streaks" />
+    <meta name="robots" content="index, follow" />
+    <!-- Update this canonical if you deploy to a different URL -->
+    <link rel="canonical" href="https://chimerical-puppy-b36ffe.netlify.app/" />
     <link rel="manifest" href="/manifest.webmanifest" />
     <meta name="theme-color" content="#0ea5e9" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Offline Habit Tracker" />
+    <meta property="og:description" content="Create, track and maintain habits offline with this lightweight PWA. Persistent storage via IndexedDB, installable and fast." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://chimerical-puppy-b36ffe.netlify.app/" />
+    <meta property="og:image" content="/icons/offline-habit-tracker.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Offline Habit Tracker" />
+    <meta name="twitter:description" content="Create, track and maintain habits offline with this lightweight PWA." />
+    <meta name="twitter:image" content="/icons/offline-habit-tracker.png" />
+
     <title>Offline Habit Tracker</title>
+
+    <!-- Structured data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "name": "Offline Habit Tracker",
+          "url": "https://chimerical-puppy-b36ffe.netlify.app/",
+          "description": "A lightweight PWA to create, track and maintain daily or weekly habits with offline support.",
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "Offline Habit Tracker",
+          "operatingSystem": "Web",
+          "applicationCategory": "BusinessApplication",
+          "url": "https://chimerical-puppy-b36ffe.netlify.app/",
+          "description": "Track habits offline using IndexedDB and a service worker to enable an installable PWA.",
+          "image": "https://ramosmarco95.github.io/javascript-projects/offline-habit-tracker/icons/offline-habit-tracker.png",
+          "author": {
+            "@type": "Person",
+            "name": "Marco Ramos",
+            "url": "https://ramosmarco95.github.io/portfolio/"
+          }
+        },        
+      ]
+    }
+    </script>
   </head>
   <body>
     <header>
@@ -24,6 +73,16 @@
 
     <main>
       <ul id="habit-list" tabindex="0" aria-live="polite"></ul>
+      <section id="demo-video" aria-labelledby="demo-video-heading">
+        <h2 id="demo-video-heading">App demo</h2>
+        <p>
+          Watch the walkthrough for the Offline Habit Tracker.
+          <a href="https://youtu.be/IEepu7yx9XI" target="_blank">Open on YouTube</a>
+        </p>
+        <p>Learn More: <a href="https://github.com/ramosmarco95/offline-habit-tracker" target="_blank">GitHub</a></p>
+      </section>
+
+      
     </main>
 
 

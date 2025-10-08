@@ -66,17 +66,6 @@ export function createStore() {
     await deleteHabit(id);
   }
 
-/*   async function markComplete(id: string, dateISO: string) {
-    state = {
-      ...state,
-      habits: state.habits.map((h) =>
-        h.id === id ? { ...h, streak: h.streak + 1, lastTick: dateISO } : h,
-      ),
-    };
-    notify();
-    // entries persisted in db layer by UI when needed
-  } */
-
   async function markComplete(id: string, dateISO: string) {
   const target = state.habits.find((h) => h.id === id);
   if (!target) return;
